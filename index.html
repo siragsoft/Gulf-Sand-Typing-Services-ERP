@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Guard against browser extension exceptions (e.g. MetaMask / Web3 injected wallet errors)
+      window.addEventListener('error', function(event) {
+        var msg = (event && event.message) ? event.message : '';
+        var src = (event && event.filename) ? event.filename : '';
+        if (
+          msg.indexOf('MetaMask') !== -1 ||
+          msg.indexOf('ethereum') !== -1 ||
+          src.indexOf('chrome-extension') !== -1 ||
+          src.indexOf('moz-extension') !== -1
+        ) {
+          event.stopImmediatePropagation && event.stopImmediatePropagation();
+          event.preventDefault && event.preventDefault();
+          return true;
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function(event) {
+        var reason = event && event.reason;
+        var msg = (reason && (reason.message || reason.toString())) || '';
+        if (
+          msg.indexOf('MetaMask') !== -1 ||
+          msg.indexOf('ethereum') !== -1
+        ) {
+          event.stopImmediatePropagation && event.stopImmediatePropagation();
+          event.preventDefault && event.preventDefault();
+        }
+      }, true);
+    </script>
+    <title>جلف ساند للطباعة والخدمات | GULFSAND TYPING SERVICES</title>
+    <meta name="description" content="نظام إدارة الموارد والمؤسسة لجلف ساند للطباعة والخدمات - العين" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

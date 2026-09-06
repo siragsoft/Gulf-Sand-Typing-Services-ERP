@@ -1,0 +1,8 @@
+{
+  "name": "Gulf Sand Typing Services ERP",
+  "description": "Enterprise Resource Planning and Business Operating System for Gulfsand Typing Services in Al Ain, UAE with Arabic RTL interface, Google Workspace architecture, CRM, Accounting, HR, Bookings, and AI Assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
